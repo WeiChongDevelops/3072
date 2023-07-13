@@ -1,4 +1,4 @@
-import {colours} from "../styleobjects.ts";
+import { colours } from "../styleobjects.ts";
 
 interface CellProps {
     cellValue: number;
@@ -16,8 +16,8 @@ export default function Cell({cellValue, justGenerated, justMerged}:CellProps) {
     return (
         <div style={{backgroundColor: colourObject.backgroundColour}}
              className={` 
-        w-32 h-32
-        border-customGrey border-8 rounded-2xl
+        w-28 h-28
+        border-customGrey border-8 rounded-xl
         flex flex-col justify-center
         ${justGenerated && "just-generated"}
         ${justMerged && "just-merged"}`}>
