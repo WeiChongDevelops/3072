@@ -1,0 +1,102 @@
+@keyframes expandIn {
+    from {
+        transform: scale(0.3);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.just-generated {
+    transform: scale(0);
+    animation: expandIn 115ms forwards;
+    animation-timing-function: ease-out;
+    box-shadow: none;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.just-merged {
+    transform: scale(1);
+    animation: pop 200ms forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes ghost-right {
+    0% {
+        transform: translate(-15px, 0);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.shift-right{
+    transform: translate(0,0);
+    animation: ghost-right 200ms forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes ghost-left {
+    0% {
+        transform: translate(15px, 0);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.shift-left{
+    transform: translate(0,0);
+    animation: ghost-left 200ms forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes ghost-down {
+    0% {
+        transform: translate(0, -15px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.shift-down{
+    transform: translate(0,0);
+    animation: ghost-down 200ms forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes ghost-up {
+    0% {
+        transform: translate(0, 15px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.shift-up{
+    transform: translate(0,0);
+    animation: ghost-up 200ms forwards;
+    animation-timing-function: ease-in-out;
+}
+
