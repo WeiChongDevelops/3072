@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import Cell from "./Cell.tsx";
-import * as util from "../util.ts"
 
 interface gridProps {
     gameMatrix: number[][];
@@ -9,15 +7,6 @@ interface gridProps {
 }
 
 export default function StaticGrid({gameMatrix, justGenerated, justMergedMatrix}:gridProps) {
-    // const [gameMatrix, setGameMatrix] = useState(startMatrix);
-    // const [justGenerated, setJustGenerated] = useState(startMatrix.map( row => row.map(cell => cell !== 0)));
-    // const [justMergedMatrix, setJustMergedMatrix] = useState([
-    //                                                                                             [false, false, false, false],
-    //                                                                                             [false, false, false, false],
-    //                                                                                             [false, false, false, false],
-    //                                                                                             [false, false, false, false],
-    //                                                                                         ]);
-
 
 
     const gridContainerStyle = {

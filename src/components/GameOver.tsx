@@ -1,29 +1,15 @@
-import { useState, useEffect } from "react";
-import Cell from "./Cell.tsx";
-import * as util from "../util.ts"
 import GameOverCell from "./GameOverCell.tsx";
 import NewGameButton from "./NewGameButton.tsx";
 
 interface GameOverProps {
     gameMatrix: number[][];
-    justGenerated: boolean[][];
-    justMergedMatrix: boolean[][];
     setGameMatrix: Function;
     setCurrentScore: Function;
     isGameOver: boolean;
     setIsGameOver: Function;
 }
 
-export default function GameOver({gameMatrix, justGenerated, justMergedMatrix, setGameMatrix, setCurrentScore, isGameOver, setIsGameOver}:GameOverProps) {
-    // const [gameMatrix, setGameMatrix] = useState(startMatrix);
-    // const [justGenerated, setJustGenerated] = useState(startMatrix.map( row => row.map(cell => cell !== 0)));
-    // const [justMergedMatrix, setJustMergedMatrix] = useState([
-    //                                                                                             [false, false, false, false],
-    //                                                                                             [false, false, false, false],
-    //                                                                                             [false, false, false, false],
-    //                                                                                             [false, false, false, false],
-    //                                                                                         ]);
-
+export default function GameOver({gameMatrix, setGameMatrix, setCurrentScore, isGameOver, setIsGameOver}:GameOverProps) {
 
 
     const gridContainerStyle = {

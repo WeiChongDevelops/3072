@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import Cell from "./Cell.tsx";
-import * as util from "../util.ts"
 import GameOver from "./GameOver.tsx"
 
 interface gridProps {
@@ -27,8 +25,6 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
     return (
         <div className="flex justify-center items-center relative" >
             <GameOver gameMatrix={gameMatrix}
-                      justGenerated={justGenerated}
-                      justMergedMatrix={justMergedMatrix}
                       setGameMatrix={setGameMatrix}
                       setCurrentScore={setCurrentScore}
                       isGameOver={isGameOver}

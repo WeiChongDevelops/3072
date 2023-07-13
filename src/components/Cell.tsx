@@ -1,5 +1,4 @@
 import {colours} from "../styleobjects.ts";
-import {useEffect, useState} from "react";
 
 interface CellProps {
     cellValue: number;
@@ -9,7 +8,7 @@ interface CellProps {
     justMerged: boolean;
 }
 
-export default function Cell({cellValue, debugXCoord, debugYCoord, justGenerated, justMerged}:CellProps) {
+export default function Cell({cellValue, justGenerated, justMerged}:CellProps) {
 
     const colourObject = cellValue === 0 ? colours[0] : colours[Math.log2(cellValue/3) + 1];
 
