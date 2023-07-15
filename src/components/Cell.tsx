@@ -21,7 +21,7 @@ export default function Cell({cellValue, justGenerated, justMerged}:CellProps) {
         flex flex-col justify-center
         ${justGenerated && "just-generated"}
         ${justMerged && "just-merged"}`}>
-            <p className="font-extrabold text-4xl"
+            <p className="font-extrabold text-3xl"
                style={{color: colourObject.textColour,
                    fontSize: colourObject.textSize}}>
                 {cellValue ? cellValue : null}

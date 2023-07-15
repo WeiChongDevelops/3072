@@ -10,7 +10,13 @@ interface Game3072Props {
 
 export default function Game3072({size}: Game3072Props) {
 
-    const startMatrix = getFreshMatrix(size);
+    // const startMatrix = getFreshMatrix(size);
+    const startMatrix = [
+        [3072,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+    ];
 
     const [gameMatrix, setGameMatrix] = useState(startMatrix);
     const [justGenerated, setJustGenerated] = useState(startMatrix.map( row => row.map(cell => cell !== 0)));
