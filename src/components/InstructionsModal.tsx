@@ -18,8 +18,8 @@ export default function InstructionsModal({ onClose, closing }: InstructionsModa
                         <li>Use your arrow keys to move the blocks.</li>
                         <li>When two blocks with the same number touch, they merge into one with their sum!</li>
                         <li>The goal is to combine blocks to create a block with the number '3072'.</li>
-                        <li>The game is over when the grid is filled and you cannot make a move to merge blocks.</li>
-                        <li>Although mobile-responsive, I haven't added swipe controls - please use a laptop or desktop :)</li>
+                        <li>The game is over when the grid is filled and you cannot make a valid move.</li>
+                        <li>Although mobile-responsive, I have not added swipe controls - please use a laptop or desktop :)</li>
                     </ul>
                     <Button clickFunction={onClose} buttonMessage={"Understood"}/>
                 </div>
