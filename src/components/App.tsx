@@ -20,7 +20,7 @@ export default function App() {
 
     return (
         <div className={`${closing ? 'closing' : ''}`}>
-            {showModal && <InstructionsModal onClose={onClose}  closing/>}
+            {showModal && <InstructionsModal onClose={onClose}  closing={closing}/>}
             <div className={`game-container ${showModal ? 'filter blur-md' : ''}`}>
                 <Game3072 size={SIZE}/>
             </div>
