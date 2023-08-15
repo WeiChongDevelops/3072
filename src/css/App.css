@@ -44,3 +44,65 @@ html {
 .read-the-docs {
   color: #888;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #e2e8e2;
+  width: 2%;
+  padding-bottom: 2%;
+  position: relative;
+  text-align: center;
+  min-width: 470px;
+  min-height: 470px;
+  color: #131212;
+  border-radius: 10px;
+}
+
+.modal-content li {
+  @apply my-3 ml-2;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    max-width: 300px;
+  }
+}
+
+.closing .modal {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.closing .game-container {
+  filter: blur(0);
+  transition: filter 500ms ease-in-out;
+}
