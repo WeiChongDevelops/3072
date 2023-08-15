@@ -1,6 +1,12 @@
 import Button from "./Button.tsx";
+import {MouseEventHandler} from "react";
 
-export default function InstructionsModal({ onClose, closing }) {
+interface InstructionsModalProps {
+    onClose: MouseEventHandler<HTMLSpanElement>
+    closing: boolean
+}
+
+export default function InstructionsModal({ onClose, closing }: InstructionsModalProps) {
     return (
         <div className={`modal-overlay ${closing ? 'closing' : ''}`}>
             <div className="modal">

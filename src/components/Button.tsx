@@ -1,7 +1,8 @@
+import {MouseEventHandler} from "react";
 
 
 interface ButtonProps {
-    clickFunction: () => void;
+    clickFunction: MouseEventHandler<HTMLSpanElement>;
     buttonMessage: string;
 }
 
