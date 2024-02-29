@@ -22,6 +22,4 @@ This project is open source, licensed under the GNU GENERAL PUBLIC LICENSE.
 
 # Contact
 You can get in touch with me at:
-
 GitHub: @WeiChongDevelops
-Email: wac.weichong@gmail.com
