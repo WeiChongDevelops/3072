@@ -1,8 +1,8 @@
-import '../css/App.css';
-import Game3072 from "./Game3072.tsx";
-import "../css/Cell.css";
-import "../firebase.ts";
-import InstructionsModal from "./InstructionsModal.tsx";
+import '../../css/App.css';
+import Game3072 from "../child/Game3072.tsx";
+import "../../css/Cell.css";
+import "../../firebase.ts";
+import InstructionsModal from "../child/InstructionsModal.tsx";
 import { useState } from "react";
 
 const SIZE = 4;

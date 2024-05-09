@@ -1,8 +1,8 @@
 import Grid from "./Grid.tsx";
-import {getFreshMatrix} from "../util.ts";
+import {getFreshMatrix} from "../../util.ts";
 import GameHeader from "./GameHeader.tsx";
 import {useEffect, useState} from "react";
-import {handleArrowKey} from "../util.ts";
+import {handleArrowKey} from "../../util.ts";
 
 interface Game3072Props {
     size: number;
@@ -65,14 +65,7 @@ export default function Game3072({size}: Game3072Props) {
     }, [currentScore, highScore]); // depend on currentScore, highScore
 
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-            marginTop: "4000px;"
-        }}>
+        <div className={"flex flex-col justify-center items-center h-screen"}>
             <GameHeader
                 setGameMatrix={setGameMatrix}
                 size={size}

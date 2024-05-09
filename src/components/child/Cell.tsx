@@ -1,4 +1,4 @@
-import { colours } from "../styleobjects.ts";
+import { colours } from "../../styleobjects.ts";
 
 interface CellProps {
     cellValue: number;
