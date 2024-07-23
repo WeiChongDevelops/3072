@@ -25,7 +25,7 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
     };
 
     return (
-        <div className="grid place-content-center relative" style={{gridTemplateAreas: "stack"}}>
+        <div className="grid place-content-center" style={{gridTemplateAreas: "stack"}}>
             <GameOver gameMatrix={gameMatrix}
                       setGameMatrix={setGameMatrix}
                       setCurrentScore={setCurrentScore}
@@ -33,7 +33,7 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
                       setIsGameOver={setIsGameOver}/>
 
 
-            <div className="border-customGrey border-8 rounded-2xl bg-customGrey" style={gridContainerStyle}>
+            <div className="border-customGrey sm:border-8 border-4 rounded-2xl bg-customGrey" style={gridContainerStyle}>
                 {gameMatrix[0].map((_, columnIndex) => (
                     <div key={columnIndex}>
                         {gameMatrix.map((matrixRow, rowIndex) => (

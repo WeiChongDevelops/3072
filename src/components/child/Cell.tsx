@@ -16,8 +16,8 @@ export default function Cell({cellValue, justGenerated, justMerged}:CellProps) {
     return (
         <div style={{backgroundColor: colourObject.backgroundColour}}
              className={` 
-        sm:w-28 sm:h-28 w-24 h-24
-        border-customGrey border-8 rounded-xl
+        sm:w-28 sm:h-28 w-20 h-20
+        border-customGrey sm:border-8 border-4 rounded-xl
         flex flex-col justify-center
         ${justGenerated && "just-generated"}
         ${justMerged && "just-merged"}`}>
