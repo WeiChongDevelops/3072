@@ -30,7 +30,7 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
                       setIsGameOver={setIsGameOver}/>
 
 
-            <div className="border-customGrey sm:border-8 border-4 rounded-2xl bg-customGrey" style={gridContainerStyle}>
+            <div className="border-customGrey sm:border-8 border-[5px] rounded-2xl bg-customGrey" style={gridContainerStyle}>
                 {gameMatrix[0].map((_, columnIndex) => (
                     <div key={columnIndex}>
                         {gameMatrix.map((matrixRow, rowIndex) => (
