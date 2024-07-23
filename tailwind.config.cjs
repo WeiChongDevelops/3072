@@ -5,15 +5,16 @@ module.exports = {
     extend: {
       borderColor: {
         customGrey: '#131212',
-        customGreen: '#7d8d7b',
+        customGreen: '#70806e',
       },
       backgroundColor: {
         customGrey: '#131212',
-        customGreen: '#7d8d7b',
+        customGreen: '#70806e',
       },
       boxShadowColor: {
         customGrey: '#131212',
         customGreen: '#7d8d7b',
+        lightGreen: '#c5d4c3'
       },
     },
   },

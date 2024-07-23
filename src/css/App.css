@@ -9,40 +9,8 @@ html {
   overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.extra-glowy-text {
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.2), 0 0 0.4em rgba(255, 255, 255, 0.3);
 }
 
 .modal-overlay {
@@ -66,7 +34,6 @@ html {
 .modal-content {
   background-color: #e2e8e2;
   position: relative;
-  text-align: center;
   color: #131212;
   border-radius: 10px;
 }
@@ -94,44 +61,34 @@ html {
 }
 
 html {
-  font-size: 16px;
-}
-
-html {
   font-size: 18px;
 }
 
-@media (max-width: 75rem) {
+@media (max-width: 64rem) {
   html {
     font-size: 17px;
   }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 48rem) {
   html {
     font-size: 16px;
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 30rem) {
   html {
     font-size: 15px;
   }
 }
-
-@media (max-width: 30rem) {
-  html {
-    font-size: 14px;
-  }
-}
 @media (max-width: 25rem) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 20rem) {
   html {
-    font-size: 10px;
+    font-size: 12px;
   }
 }

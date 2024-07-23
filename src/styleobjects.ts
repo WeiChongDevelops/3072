@@ -1,5 +1,5 @@
 export const colours = [
-    { backgroundColour: "#7d8d7b", textColour: "black", textSize: "56px" },
+    { backgroundColour: "#70806e", textColour: "black", textSize: "56px" },
     { backgroundColour: "#acd7b9", textColour: "black", textSize: "56px" },
     { backgroundColour: "#2dcea6", textColour: "black", textSize: "56px" },
     { backgroundColour: "#154115", textColour: "white", textSize: "50px" },
