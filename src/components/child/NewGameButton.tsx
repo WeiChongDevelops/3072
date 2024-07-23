@@ -5,7 +5,7 @@ interface NewGameButtonProps {
     setGameMatrix: Function;
     size: number;
     setCurrentScore: Function;
-    buttonMessage: string;
+    buttonMessage?: string;
     setIsGameOver: Function;
 }
 
@@ -18,7 +18,7 @@ export default function NewGameButton({setGameMatrix, size, setCurrentScore, but
     }
 
     return (
-      <Button clickFunction={handleClick} buttonMessage={buttonMessage}>
+      <Button clickFunction={handleClick} buttonMessage={buttonMessage!}>
           <ArrowCounterClockwise weight={"bold"}/>
       </Button>
     );
