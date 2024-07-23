@@ -16,14 +16,15 @@ export default function Cell({cellValue, justGenerated, justMerged}:CellProps) {
     return (
         <div style={{backgroundColor: colourObject.backgroundColour}}
              className={` 
-        w-28 h-28
+        sm:w-28 sm:h-28 w-24 h-24
         border-customGrey border-8 rounded-xl
         flex flex-col justify-center
         ${justGenerated && "just-generated"}
         ${justMerged && "just-merged"}`}>
-            <p className="font-extrabold text-3xl"
-               style={{color: colourObject.textColour,
-                   fontSize: colourObject.textSize}}>
+            <p className="font-extrabold sm:text-6xl text-5xl"
+               style={{color: colourObject.textColour}}>
+               {/*style={{color: colourObject.textColour,*/}
+               {/*    fontSize: colourObject.textSize}}>*/}
                 {cellValue ? cellValue : null}
             </p>
             {/*<small className="text-black text-sm">*/}

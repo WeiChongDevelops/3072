@@ -16,20 +16,24 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
     const gridContainerStyle = {
         display: "grid",
         gridTemplateColumns: `repeat(${gameMatrix.length}, 1fr)`,
-        gridTemplateRows: `repeat(${gameMatrix.length}, 1fr)`,
-        maxHeight: `${112*gameMatrix.length + 15}px`,
+        // gridTemplateRows: `repeat(${gameMatrix.length}, 1fr)`,
+        // maxHeight: `${112*gameMatrix.length + 15}px`,
+        // maxHeight: `${7*gameMatrix.length + 1.25}rem`,
         boxShadow: `0 0 45px 2px ${isGameOver ? 'rgba(255,0,0,0.9)' : 'rgba(153, 192, 161, 0.7)' }`,
         zIndex: 1,
     };
 
     return (
         <div className="flex justify-center items-center relative" >
-            <GameOver gameMatrix={gameMatrix}
-                      setGameMatrix={setGameMatrix}
-                      setCurrentScore={setCurrentScore}
-                      isGameOver={isGameOver}
-                      setIsGameOver={setIsGameOver}/>
-            <div className="border-customGrey border-8 rounded-2xl bg-customGrey absolute" style={gridContainerStyle}>
+            {/*<GameOver gameMatrix={gameMatrix}*/}
+            {/*          setGameMatrix={setGameMatrix}*/}
+            {/*          setCurrentScore={setCurrentScore}*/}
+            {/*          isGameOver={isGameOver}*/}
+            {/*          setIsGameOver={setIsGameOver}/>*/}
+
+            {/*<div className={"size-96 bg-rose-500"}></div>*/}
+
+            <div className="border-customGrey border-8 rounded-2xl bg-customGrey" style={gridContainerStyle}>
                 {gameMatrix[0].map((_, columnIndex) => (
                     <div key={columnIndex}>
                         {gameMatrix.map((matrixRow, rowIndex) => (

@@ -40,32 +40,79 @@ export default function Game3072({size}: Game3072Props) {
         const handleKeyDown = (evt: KeyboardEvent) => {
             let key = "";
             switch (evt.code) {
-                case("ArrowLeft"):
+                case "ArrowLeft":
                     key = "left";
                     break;
-                case("ArrowRight"):
+                case "ArrowRight":
                     key = "right";
                     break;
-                case("ArrowUp"):
+                case "ArrowUp":
                     key = "up";
                     break;
-                case("ArrowDown"):
+                case "ArrowDown":
                     key = "down";
                     break;
             }
-            console.log({currentScore, highScore})
+            console.log({ currentScore, highScore });
             key && (setIsGameOver(handleArrowKey(gameMatrix, key, setGameMatrix, setJustGenerated, setJustMergedMatrix, setCurrentScore, setHighScore, currentScore)));
-        }
+        };
+
+        const handleSwipe = (direction: string) => {
+            console.log({ currentScore, highScore });
+            direction && (setIsGameOver(handleArrowKey(gameMatrix, direction, setGameMatrix, setJustGenerated, setJustMergedMatrix, setCurrentScore, setHighScore, currentScore)));
+        };
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        const handleTouchStart = (evt: TouchEvent) => {
+            touchStartX = evt.touches[0].clientX;
+            touchStartY = evt.touches[0].clientY;
+        };
+
+        const handleTouchMove = (evt: TouchEvent) => {
+            touchEndX = evt.touches[0].clientX;
+            touchEndY = evt.touches[0].clientY;
+        };
+
+        const handleTouchEnd = () => {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            const absDeltaX = Math.abs(deltaX);
+            const absDeltaY = Math.abs(deltaY);
+
+            if (absDeltaX > absDeltaY) {
+                if (deltaX > 0) {
+                    handleSwipe("right");
+                } else {
+                    handleSwipe("left");
+                }
+            } else {
+                if (deltaY > 0) {
+                    handleSwipe("down");
+                } else {
+                    handleSwipe("up");
+                }
+            }
+        };
 
         window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("touchstart", handleTouchStart);
+        window.addEventListener("touchmove", handleTouchMove);
+        window.addEventListener("touchend", handleTouchEnd);
 
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
-        }
-    }, [currentScore, highScore]); // depend on currentScore, highScore
+            window.removeEventListener("touchstart", handleTouchStart);
+            window.removeEventListener("touchmove", handleTouchMove);
+            window.removeEventListener("touchend", handleTouchEnd);
+        };
+    }, [currentScore, highScore]);
 
     return (
-        <div className={"flex flex-col justify-center items-center h-screen"}>
+        <div className={"flex flex-col justify-center items-center gap-4 w-full h-full"}>
             <GameHeader
                 setGameMatrix={setGameMatrix}
                 size={size}
