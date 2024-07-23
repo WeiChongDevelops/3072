@@ -112,7 +112,7 @@ export default function Game3072({size}: Game3072Props) {
     }, [currentScore, highScore]);
 
     return (
-        <div className={"flex flex-col justify-center items-center h-screen"}>
+        <div className={"flex flex-col justify-center items-center h-screen gap-4"}>
             <GameHeader
                 setGameMatrix={setGameMatrix}
                 size={size}
