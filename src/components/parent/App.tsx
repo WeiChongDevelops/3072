@@ -19,7 +19,7 @@ export default function App() {
     };
 
     return (
-        <div className={`${closing ? 'closing' : ''}`}>
+        <div className={`${closing ? 'closing' : ''} mx-24`}>
             {showModal && <InstructionsModal onClose={onClose}  closing={closing}/>}
             <div className={`game-container ${showModal ? 'filter blur-md' : ''}`}>
                 <Game3072 size={SIZE}/>

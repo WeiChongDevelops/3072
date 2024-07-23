@@ -1,4 +1,3 @@
-import DisplayBlock from "./DisplayBlock.tsx"
 import ScoreDisplays from "./ScoreDisplays.tsx";
 import NewGameButton from "./NewGameButton.tsx";
 import {cn} from "../../util.ts";
@@ -14,10 +13,6 @@ interface GameHeaderProps {
 }
 
 export default function GameHeader({setGameMatrix, size, currentScore, setCurrentScore, highScore, setHighScore, setIsGameOver}:GameHeaderProps) {
-    // return <div className="flex flex-row justify-between mt-6 items-end mb-6 z-20 justify-self-end outline">
-    //     <h1 className="font-extrabold justify-self-start self-start text-8xl ml-4">3072</h1>
-    //     <DisplayBlock currentScore={currentScore} setCurrentScore={setCurrentScore} setGameMatrix={setGameMatrix} size={size} highScore={highScore} setHighScore={setHighScore} setIsGameOver={setIsGameOver}/>
-    // </div>
     return <div className="flex flex-col items-center mt-6 mb-6 z-20 w-full gap-6 sm:gap-4">
         <div className={cn("flex flex-col sm:flex-row gap-8 sm:gap-0 items-center w-full")}>
             <h1 className="font-extrabold text-7xl ml-4">3072</h1>
@@ -25,6 +20,5 @@ export default function GameHeader({setGameMatrix, size, currentScore, setCurren
         </div>
         <div className={"flex flex-row items-center sm:justify-end justify-center w-full"}>
             <NewGameButton setGameMatrix={setGameMatrix} size={size} setCurrentScore={setCurrentScore} setIsGameOver={setIsGameOver}/></div>
-        {/*<DisplayBlock currentScore={currentScore} setCurrentScore={setCurrentScore} setGameMatrix={setGameMatrix} size={size} highScore={highScore} setHighScore={setHighScore} setIsGameOver={setIsGameOver}/>*/}
     </div>
 }
