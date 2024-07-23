@@ -111,23 +111,23 @@ export default function Game3072({size}: Game3072Props) {
     }, [currentScore, highScore]);
 
     return (
-        <div className={"flex flex-col justify-center items-center h-screen gap-4 sm:pb-2 pb-32"}>
-            <GameHeader
-                setGameMatrix={setGameMatrix}
-                size={size}
-                currentScore={currentScore}
-                setCurrentScore={setCurrentScore}
-                highScore={highScore}
-                setHighScore={setHighScore}
-                setIsGameOver={setIsGameOver}/>
-            <Grid
-                gameMatrix={gameMatrix}
-                justGenerated={justGenerated}
-                justMergedMatrix={justMergedMatrix}
-                setGameMatrix={setGameMatrix}
-                setCurrentScore={setCurrentScore}
-                isGameOver={isGameOver}
-                setIsGameOver={setIsGameOver}/>
-        </div>
+    <div className={"flex flex-col justify-center items-center h-screen gap-4 sm:pb-2 pb-32"}>
+        <GameHeader
+            setGameMatrix={setGameMatrix}
+            size={size}
+            currentScore={currentScore}
+            setCurrentScore={setCurrentScore}
+            highScore={highScore}
+            setHighScore={setHighScore}
+            setIsGameOver={setIsGameOver}/>
+        <Grid
+            gameMatrix={gameMatrix}
+            justGenerated={justGenerated}
+            justMergedMatrix={justMergedMatrix}
+            setGameMatrix={setGameMatrix}
+            setCurrentScore={setCurrentScore}
+            isGameOver={isGameOver}
+            setIsGameOver={setIsGameOver}/>
+    </div>
     )
 }
