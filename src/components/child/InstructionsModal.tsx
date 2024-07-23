@@ -10,10 +10,10 @@ export default function InstructionsModal({ onClose, closing }: InstructionsModa
     return (
         <div className={`modal-overlay ${closing ? 'closing' : ''}`}>
             <div className="modal outline outline-white">
-                <div className="modal-content px-8 py-8 md:max-w-lg mx-4">
+                <div className="modal-content px-8 py-8 md:max-w-lg mx-4 flex flex-col items-center">
                     <span className="close-button" onClick={onClose}>&times;</span>
                     <h1 className="mt-4 text-3xl">Welcome to 3072!</h1>
-                    <ol className="list-decimal ml-2.5 my-10 font-normal text-left">
+                    <ol className="list-decimal flex flex-col gap-1 ml-2.5 my-6 font-normal text-left">
                         <li><b>Swipe</b> or use <b>arrow keys</b> to move the blocks.</li>
                         <li>When two blocks with the <b>same</b> number touch, they combine to form a block with their sum!</li>
                         <li>The goal is to combine blocks to create a block with the number <b>'3072'</b>.</li>

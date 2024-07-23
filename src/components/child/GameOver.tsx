@@ -40,7 +40,8 @@ export default function GameOver({gameMatrix, setGameMatrix, setCurrentScore, is
         //         <NewGameButton setGameMatrix={setGameMatrix} size={gameMatrix.length} setCurrentScore={setCurrentScore} buttonMessage={"Try Again"} setIsGameOver={setIsGameOver}/>
         //     </div>
         // </div>
-      <div className={cn("size-full bg-rose-700/70 rounded-2xl z-20 flex flex-col justify-center items-center gap-4", isGameOver ? "opacity-1" : "opacity-0")} style={{gridArea: "stack"}}>
+      <div className={cn("size-full rounded-2xl z-20 flex flex-col justify-center items-center gap-4", isGameOver ? "opacity-1" : "opacity-0")} style={{gridArea: "stack", backgroundColor: "rgba(145,19,19,0.7)",
+        transition: "opacity 1150ms ease-in-out"}}>
           <h2 className="font-extrabold text-6xl">Game Over!</h2>
           <NewGameButton setGameMatrix={setGameMatrix} size={gameMatrix.length} setCurrentScore={setCurrentScore} buttonMessage={"Try Again"} setIsGameOver={setIsGameOver}/></div>
 

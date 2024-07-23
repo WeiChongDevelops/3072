@@ -16,7 +16,7 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
     const gridContainerStyle = {
         display: "grid",
         gridTemplateColumns: `repeat(${gameMatrix.length}, 1fr)`,
-        boxShadow: `0 0 45px 3px ${isGameOver ? 'rgba(255,0,0,0.9)' : 'rgba(250, 250, 250, 1)' }`,
+        boxShadow: `0 0 45px 3px ${isGameOver ? 'rgba(255,0,0,0.9)' : 'rgba(126, 145, 131, 1)' }`,
         zIndex: 1,
         gridArea: "stack"
     };
