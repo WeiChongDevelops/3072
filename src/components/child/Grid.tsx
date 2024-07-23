@@ -25,7 +25,7 @@ export default function Grid({gameMatrix, justGenerated, justMergedMatrix, setGa
     };
 
     return (
-        <div className="grid place-content-center" style={{gridTemplateAreas: "stack"}}>
+        <div className="grid place-content-center max-h-screen" style={{gridTemplateAreas: "stack"}}>
             <GameOver gameMatrix={gameMatrix}
                       setGameMatrix={setGameMatrix}
                       setCurrentScore={setCurrentScore}
