@@ -22,7 +22,7 @@ export default function GameHeader({setGameMatrix, size, currentScore, setCurren
             <ScoreDisplays currentScore={currentScore} highScore={highScore} setHighScore={setHighScore}/>
         </div>
         <div className={"flex flex-row items-center sm:justify-end justify-center w-full gap-2"}>
-            <button onClick={() => setShowModal(true)} className={"px-2.5 py-1 flex"}><span className={"extra-glowy-text"}><LightbulbFilament className={"extra-glowy-text"} weight={"bold"} size={30}/></span></button>
+            <button onClick={() => setShowModal(true)} className={"px-2.5 py-1 flex"}><span className={"extra-glowy-text"}><LightbulbFilament className={"extra-glowy-text"} weight={"bold"} size={"2rem"}/></span></button>
             <NewGameButton setGameMatrix={setGameMatrix} size={size} setCurrentScore={setCurrentScore} setIsGameOver={setIsGameOver}/></div>
     </div>
 }
