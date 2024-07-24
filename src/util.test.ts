@@ -11,13 +11,6 @@ describe('handleArrowKey', () => {
             [2, 4, 8, 16]
         ];
 
-        const expectedMatrix = [
-            [4, 2, 2, 4],
-            [0, 4, 8, 8],
-            [0, 0, 4, 16],
-            [0, 0, 0, 0]
-        ];
-
         // Mock functions
         const setGameMatrix = vi.fn();
         const setJustGenerated = vi.fn();
