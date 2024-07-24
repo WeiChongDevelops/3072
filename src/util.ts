@@ -1,5 +1,6 @@
 import {ClassValue, clsx} from "clsx";
 import {twMerge} from "tailwind-merge";
+import {Dispatch, SetStateAction} from "react";
 
 /**
  * Combines class names using `clsx` and `twMerge` for optimized className merging.
@@ -24,11 +25,11 @@ export function cn(...inputs: ClassValue[]) {
  * @returns A boolean indicating if the game is over.
  */
 export function handleArrowKey(gameMatrix: number[][], key: string,
-                               setGameMatrix: Function,
-                               setJustGenerated: Function,
-                               setJustMergedMatrix: Function,
-                               setCurrentScore: Function,
-                               setHighScore: Function,
+                               setGameMatrix: Dispatch<SetStateAction<number[][]>>,
+                               setJustGenerated: Dispatch<SetStateAction<boolean[][]>>,
+                               setJustMergedMatrix: Dispatch<SetStateAction<boolean[][]>>,
+                               setCurrentScore: Dispatch<SetStateAction<number>>,
+                               setHighScore: Dispatch<SetStateAction<number>>,
                                currentScore: number): boolean {
     const intermediateJustMergedMatrix = [
         [false, false, false, false],
@@ -197,7 +198,7 @@ function getRandomNumber(gridSize: number) {
  * @param setJustGenerated - Function to mark newly generated tiles.
  * @returns The updated game matrix.
  */
-function generateNewTile(previousMatrix: number[][], newMatrix: number[][], setJustGenerated: Function) {
+export function generateNewTile(previousMatrix: number[][], newMatrix: number[][], setJustGenerated: Function) {
     const gridSize = newMatrix.length;
 
     if (!matrixHasChanged(previousMatrix, newMatrix)) {
@@ -249,7 +250,7 @@ function generateNewTile(previousMatrix: number[][], newMatrix: number[][], setJ
  * @param matrix2 - The second matrix to compare.
  * @returns A boolean indicating if there is any difference between the two matrices.
  */
-function matrixHasChanged(matrix1: number[][], matrix2: number[][]): boolean {
+export function matrixHasChanged(matrix1: number[][], matrix2: number[][]): boolean {
     for (let i = 0; i<matrix1.length; i++) {
         for (let j = 0; j< matrix1.length; j++) {
             if (matrix1[i][j] !== matrix2[i][j]) {
@@ -266,7 +267,7 @@ function matrixHasChanged(matrix1: number[][], matrix2: number[][]): boolean {
  * @param matrix - The current game matrix.
  * @returns A boolean indicating if no moves are left, hence the game is over.
  */
-function isGameOver(matrix: number[][]): boolean {
+export function isGameOver(matrix: number[][]): boolean {
     const filteredMatrix = (matrix.map(arr => {
         return arr.filter(cellValue => cellValue === 0)
     }))
@@ -284,7 +285,7 @@ function isGameOver(matrix: number[][]): boolean {
  * @param matrix - The matrix to check for possible moves.
  * @returns A boolean indicating if a valid move exists.
  */
-function validMoveIsPossible(matrix: number[][]) {
+export function validMoveIsPossible(matrix: number[][]) {
     for (let i = 0; i<matrix.length; i++) {
         for (let j = 0; j<matrix.length; j++) {
             const focusCell = matrix[i][j];
