@@ -1,17 +1,35 @@
 import {ClassValue, clsx} from "clsx";
 import {twMerge} from "tailwind-merge";
 
+/**
+ * Combines class names using `clsx` and `twMerge` for optimized className merging.
+ * @param inputs - Array of class values to be merged.
+ * @returns A single string with combined and deduplicated class names.
+ */
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
+
+/**
+ * Handles the logic for arrow key presses, updating the game state.
+ * @param gameMatrix - Current state of the game matrix.
+ * @param key - The arrow key pressed ('up', 'down', 'left', 'right').
+ * @param setGameMatrix - Function to update the game matrix.
+ * @param setJustGenerated - Function to mark newly generated tiles.
+ * @param setJustMergedMatrix - Function to mark newly merged tiles.
+ * @param setCurrentScore - Function to update the current score.
+ * @param setHighScore - Function to update the high score.
+ * @param currentScore - Current game score.
+ * @returns A boolean indicating if the game is over.
+ */
 export function handleArrowKey(gameMatrix: number[][], key: string,
                                setGameMatrix: Function,
                                setJustGenerated: Function,
                                setJustMergedMatrix: Function,
                                setCurrentScore: Function,
                                setHighScore: Function,
-                               currentScore: number) {
+                               currentScore: number): boolean {
     const intermediateJustMergedMatrix = [
         [false, false, false, false],
         [false, false, false, false],
@@ -126,7 +144,13 @@ export function handleArrowKey(gameMatrix: number[][], key: string,
     return isGameOver(newMatrix);
 }
 
-export function getFreshMatrix(gridSize: number) {
+
+/**
+ * Generates a fresh game matrix with initial random tiles for the game start.
+ * @param gridSize - The size of the grid.
+ * @returns A new game matrix initialized with two random tiles.
+ */
+export function getFreshMatrix(gridSize: number): number[][] {
     const startingSlotIndices: number[] = [];
 
     const firstRandomNumber = getRandomNumber(gridSize)
@@ -156,10 +180,23 @@ export function getFreshMatrix(gridSize: number) {
     return gameMatrix;
 }
 
+/**
+ * Internal function to generate a random index based on the grid size.
+ * @param gridSize - The size of the grid.
+ * @returns A random index within the grid boundaries.
+ */
 function getRandomNumber(gridSize: number) {
     return Math.floor(Math.random() * (Math.pow(gridSize, 2) - 1));
 }
 
+
+/**
+ * Adds a new tile to the game matrix if there has been a change.
+ * @param previousMatrix - The previous state of the game matrix.
+ * @param newMatrix - The current state of the game matrix.
+ * @param setJustGenerated - Function to mark newly generated tiles.
+ * @returns The updated game matrix.
+ */
 function generateNewTile(previousMatrix: number[][], newMatrix: number[][], setJustGenerated: Function) {
     const gridSize = newMatrix.length;
 
@@ -205,7 +242,14 @@ function generateNewTile(previousMatrix: number[][], newMatrix: number[][], setJ
     return newMatrix;
 }
 
-function matrixHasChanged(matrix1: number[][], matrix2: number[][]) {
+
+/**
+ * Checks if two matrices are different.
+ * @param matrix1 - The first matrix to compare.
+ * @param matrix2 - The second matrix to compare.
+ * @returns A boolean indicating if there is any difference between the two matrices.
+ */
+function matrixHasChanged(matrix1: number[][], matrix2: number[][]): boolean {
     for (let i = 0; i<matrix1.length; i++) {
         for (let j = 0; j< matrix1.length; j++) {
             if (matrix1[i][j] !== matrix2[i][j]) {
@@ -216,7 +260,13 @@ function matrixHasChanged(matrix1: number[][], matrix2: number[][]) {
     return false;
 }
 
-function isGameOver(matrix: number[][]) {
+
+/**
+ * Checks if the game is over by looking for available moves or empty cells.
+ * @param matrix - The current game matrix.
+ * @returns A boolean indicating if no moves are left, hence the game is over.
+ */
+function isGameOver(matrix: number[][]): boolean {
     const filteredMatrix = (matrix.map(arr => {
         return arr.filter(cellValue => cellValue === 0)
     }))
@@ -228,6 +278,12 @@ function isGameOver(matrix: number[][]) {
     return !validMoveIsPossible(matrix);
 }
 
+
+/**
+ * Determines if there is at least one valid move possible on the board.
+ * @param matrix - The matrix to check for possible moves.
+ * @returns A boolean indicating if a valid move exists.
+ */
 function validMoveIsPossible(matrix: number[][]) {
     for (let i = 0; i<matrix.length; i++) {
         for (let j = 0; j<matrix.length; j++) {
