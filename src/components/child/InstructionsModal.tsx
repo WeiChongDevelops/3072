@@ -9,7 +9,7 @@ interface InstructionsModalProps {
 export default function InstructionsModal({ onClose, closing }: InstructionsModalProps) {
     return (
         <div className={`modal-overlay ${closing ? 'closing' : ''}`}>
-            <div className="modal outline outline-white">
+            <div className="modal">
                 <div className="modal-content px-8 py-8 md:max-w-lg mx-4 flex flex-col items-center">
                     <span className="close-button" onClick={onClose}>&times;</span>
                     <h1 className="mt-4 text-3xl">Welcome to 3072!</h1>

@@ -1,14 +1,15 @@
 import Grid from "./Grid.tsx";
 import {getFreshMatrix} from "../../util.ts";
 import GameHeader from "./GameHeader.tsx";
-import {useEffect, useState} from "react";
+import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {handleArrowKey} from "../../util.ts";
 
 interface Game3072Props {
     size: number;
+    setShowModal: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Game3072({size}: Game3072Props) {
+export default function Game3072({size, setShowModal}: Game3072Props) {
 
     const startMatrix = getFreshMatrix(size);
 
@@ -119,7 +120,7 @@ export default function Game3072({size}: Game3072Props) {
             setCurrentScore={setCurrentScore}
             highScore={highScore}
             setHighScore={setHighScore}
-            setIsGameOver={setIsGameOver}/>
+            setIsGameOver={setIsGameOver} setShowModal={setShowModal}/>
         <Grid
             gameMatrix={gameMatrix}
             justGenerated={justGenerated}
